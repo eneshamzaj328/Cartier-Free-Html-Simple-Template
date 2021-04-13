@@ -1,0 +1,259 @@
+$grid: 1300;
+$columns: 12;
+$column-width: $grid / $columns;
+$padding: 10;
+$margin: 5;
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  width: #{$grid}px;
+  margin: 0px auto;
+  padding: 0px;
+}
+
+.row {
+  clear: both;
+  overflow: auto;
+}
+
+@for $column from 1 through 12 {
+  .col-#{$column} {
+    width: #{$column * $column-width - 2 * $padding - 2 * $margin}px;
+    padding: #{$padding}px;
+    margin: #{$margin}px;
+    position: relative;
+    float: left;
+  }
+
+  .col-offset-#{$column} { margin-left: #{$column * $column-width}px !important;}
+}
+
+//Media Queries Të Gjitha
+@media only screen and (max-width: 600px) {
+
+  body { margin: 0px!important;}
+
+  .container {
+    max-width: 600px;
+    margin: 5px auto;
+    padding: 10px;
+  }
+
+  @for $column from 1 through 12 {
+    .col-#{$column} {
+      width: 600px;
+      margin: 20px 0px 0px 0px;
+      padding: 0px;
+      display: block;
+    }
+  
+    .col-offset-#{$column} { margin: 0px !important;}
+  }
+
+  img { display: block;}
+
+  .logo { height: 80px;}
+
+  .logo,
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    background-color: #fff;
+  }
+
+  .menu::after {
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 25px;
+    font-family: "Font Awesome 5 Free";
+    content: "\f0c9";
+    font-weight: 900;
+    background-color: #fff;
+    display: block;
+    line-height: 80px;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+ }
+
+ .about-area-two {
+   padding: 0px;
+  margin: 111px auto; 
+  max-width: 600px;
+  background: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+  .about-content,
+  .about-img {
+    display: block;
+    width: 600px;
+    margin: 0px auto;
+    padding: 0px;
+  }
+
+  .navigation {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul  {
+    display: none;
+    position: fixed;
+    width: auto;
+    padding: 0px;
+    margin: 0px;
+    margin: 81px auto;
+    z-index: 99998;
+  }
+
+  nav ul li {
+    display: block;
+    position: relative;
+    color: #fff;
+    background-color: rgb(109, 109, 109);
+  }
+
+  nav ul li a { text-align: center;}
+
+  .n-a {
+    display: block;
+  }
+
+  .naf-img,
+  .nsc-img {
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .naf-img img {
+
+    max-width: 300px;
+    height: 300px;
+    margin: 0px;
+    display: block;
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  .hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: rgb(51, 51, 51);
+    border-right-color: rgb(51, 51, 51);
+    border-bottom-color: rgb(51, 51, 51);
+    border-left-color: rgb(51, 51, 51);
+    background-color: rgb(51, 51, 51);
+    width: 80%;
+  }
+
+  .nsc-img img { height: 303px;}
+
+  .product-info .product-code {
+    margin: 0px;
+    padding: 0px !important;
+}
+
+  .product-info img {
+    width: 151px;
+    height: 80px;
+    margin: 22px 50px;
+    padding: 0px !important;
+}
+
+  a.na-button {
+    text-align: center;
+    display: block;
+    margin: 0px auto;
+  }
+  
+  .testimonial-content { margin: 0px;}
+
+  .call-to-action-text {
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .call-to-action-box {
+    display: block;
+    text-align: center;
+    border-radius: 50px;
+    margin: 10px;
+    padding: 22px;
+  }
+
+  input {
+    border-radius: 100px;
+    padding: 0px;
+    margin-left: -40px;
+    margin-right: 10px;
+  }
+
+  .counter-number {
+    margin: 0px 0px 100px 0px;
+  }
+
+  footer {
+     margin: 0px auto;
+     padding: 0px;
+     text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container { max-width: 500px;}
+
+  @for $column from 1 through 12 {
+    .col-#{$column} { width: 500px;}
+  }
+
+  .about-content,
+  .about-img { width: 500px;}
+}
+
+@media screen and (max-width: 375px) {
+  .container { max-width: 375px;}
+
+  @for $column from 1 through 12 {
+    .col-#{$column} { width: 375px;}
+  }
+
+  .about-content,
+  .about-img { width: 375px;}
+
+  .call-to-action-text { margin-bottom: 0px;}
+
+  .call-to-action-box {
+    margin: 0px;
+    padding: 22px;
+  }
+
+  input {
+    border-radius: 100px;
+    padding: 0px;
+    margin: 10px -10px 0px -60px;
+  }
+}
+// Fund
