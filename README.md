@@ -1,6 +1,7 @@
-# HTML5-CSS3-Sass-Project
-Projekti - HTML5, CSS3, dhe Sass
+# Cartier Free Simple Template
 
----------------------------------
+Build in: HTML5, SCSS (SCSS)
 
-My first project which is built with grid complet through sass and I will fix this project if needed.
+My first project grid based build completly in SCSS.
+
+My First Project after Learning SCSS!
